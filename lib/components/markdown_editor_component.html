@@ -1,0 +1,9 @@
+<textarea class="content" ng-model="editor.content"></textarea>
+<hr />
+<div id="preview">
+  <div class="header">
+    <button ng-click="editor.toggleView()">{{ editor.toggleButtonText }}</button>
+  </div>
+  <div ng-hide="editor.viewingSource" id="html"></div>
+  <div ng-hide="!editor.viewingSource"><div class="source">{{ editor.source }}</div></div>
+</div>

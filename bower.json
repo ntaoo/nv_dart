@@ -1,0 +1,19 @@
+{
+  "name": "nv_dart",
+  "version": "0.0.1",
+  "authors": [
+    "ntaoo <ntaoo.g@gmail.com>"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "marked": "~0.3.1"
+  }
+}

@@ -1,0 +1,24 @@
+<div class="toolbar">
+  <button ng-click="cmp.createNote()">+</button>
+
+  <div class="input-wrap">
+    <input type="text" ng-model="cmp.titleFilter" placeholder="filter by note title">
+  </div>
+</div>
+
+<div class="items">
+  <div ng-repeat="note in cmp.notes | filter:{title:cmp.titleFilter}" ng-click="cmp.selectNote(note)">
+
+    <div ng-class="['item', note == cmp.activeNote ? 'active' : '']">
+      <label ng-if="note != cmp.activeNote || !cmp.isNoteTitleEditing" class="item title" ng-doubleclick="cmp.editNoteTitle(note)">{{note.title}}</label>
+      <form ng-submit="cmp.doneTitleEditing()">
+        <input ng-model="note.title" ng-if="note == cmp.activeNote && cmp.isNoteTitleEditing"
+               ng-class="[item, title]" ng-trim="false" ng-blur="cmp.doneTitleEditing()"
+               on-escape-keydown="cmp.doneTitleEditing()"
+               title-edit-focus="note == cmp.activeNote && cmp.isNoteTitleEditing"></input>
+      </form>
+      <button class="delete" ng-click="cmp.deleteNote(note)">&times;</button>
+    </div>
+
+  </div>
+</div>

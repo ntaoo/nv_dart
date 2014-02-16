@@ -1,0 +1,22 @@
+.content {
+  padding: 2px;
+  font-size: 13px;
+  height: 50%;
+  outline: none;
+  margin: 0;
+  width: 100%;
+  resize: none;
+  border: none;
+}
+
+.source {
+  padding-top: 10px;
+}
+
+.ng-show {
+  display: block !important;
+}
+
+.ng-hide {
+  display: none !important;
+}

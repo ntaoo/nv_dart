@@ -1,0 +1,183 @@
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 12px;
+  color: #444;
+}
+
+[ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+   display: none !important;
+}
+
+input, textarea {
+  font-family: 'Open Sans', sans-serif;
+  color: #444;
+}
+
+#sidebar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 25%;
+  padding: 40px 0 30px;
+  border-right: 1px solid #ddd;
+  background: #fdfdfd;
+}
+
+#main .title button {
+  position: absolute;
+  margin: 0;
+  top: 5px;
+  bottom: 5px;
+  left: 5px;
+  width: 35px;
+  background: #f3f3f3;
+  border: 1px solid #ccc;
+  border-radius: 2px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+#main .title button {
+  display: none;
+}
+
+
+#main .footer,
+#sidebar .footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 30px;
+  background: #eee;
+  border-top: 1px solid #ddd;
+  padding: 0 5px;
+  line-height: 30px;
+}
+
+#sidebar .footer a {
+  color: #444;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+#sidebar .footer a:HOVER {
+  color: blue;
+  border-bottom: 1px solid blue;
+}
+
+/* Why are you here reading the CSS? Get back to the codelab! */
+#main {
+  position: absolute;
+  top: 0;
+  left: 25%;
+  right: 0;
+  bottom: 0;
+  padding: 5px 5px 5px 5px;
+}
+
+#main:only-of-type {
+  left: 0;
+}
+
+@media all and (min-width: 501px) {
+  #sidebar .item:active {
+    -webkit-box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.1);
+  }
+}
+
+/* STEP 6: Add styles for mobile devices */
+/* Mobile styles. */
+@media all and (max-width: 500px) {
+  body {
+    overflow: hidden;
+  }
+
+  #sidebar .touched .item {
+    background-color:rgba(250, 150, 150, .8);
+
+    -webkit-transition: all .7s cubic-bezier(.65,-0.50,.76,1.32);
+    -moz-transition: all .7s cubic-bezier(.65,-0.50,.76,1.32);
+    transition: all .7s cubic-bezier(.65,-0.50,.76,1.32);
+  }
+
+  #sidebar {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    -webkit-transition: -webkit-transform 0.3s ease-in-out;
+    -moz-transition: -moz-transform 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out;
+    -webkit-transform: translate3d(-20%, 0, 0);
+    -moz-transform: translate3d(-20%, 0, 0);
+    transform: translate3d(-20%, 0, 0);
+  }
+
+  #sidebar.active {
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+
+  #sidebar .item.active .delete {
+    opacity: .7;
+  }
+
+  #main {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    -webkit-transition: -webkit-transform 0.3s ease-in-out;
+    -moz-transition: -moz-transform 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out;
+    -webkit-transform: translate3d(100%, 0, 0);
+    -moz-transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0);
+  }
+
+  #main.active {
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+
+  #main .title button {
+    display: block;
+  }
+
+  #main .title .input-wrap {
+    margin-left: 40px;
+  }
+
+  /* Let's not go there. It is a silly place. */
+  #main:only-of-type {
+    -moz-transition: none;
+    -webkit-transition: none;
+    transition: none;
+  }
+
+  #main:only-of-type button {
+    display: none;
+  }
+
+  #main:only-of-type .title .input-wrap {
+    margin-left: 0;
+  }
+}

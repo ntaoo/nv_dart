@@ -1,0 +1,11 @@
+name: nv_dart
+version: 0.0.1
+author: naotohc
+description: Tiny Markdown Editor example
+dependencies:
+  angular: any
+  browser: any
+  js: any
+  shadow_dom: any
+dev_dependencies:
+  unittest: any
