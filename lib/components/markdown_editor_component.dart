@@ -1,7 +1,7 @@
 library markdown_editor_component;
 
 import 'package:angular/angular.dart';
-import 'package:js/js.dart' as js;
+import 'dart:js';
 import 'dart:html';
 
 @NgComponent(
@@ -34,7 +34,7 @@ class MarkdownEditorComponent extends NgShadowRootAware {
   }
 
   void markdownToHtml() {
-    this.source = js.context.marked(content);
+    this.source = context.callMethod('marked',  [content]);
   }
 
   void reloadPreview() {
