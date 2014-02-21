@@ -1,4 +1,4 @@
-library the_webapp_component;
+library nv_dart_component;
 
 import 'package:angular/angular.dart';
 import 'package:nv_dart/note.dart';

@@ -11,7 +11,7 @@ import 'dart:html';
     publishAs: 'editor',
     applyAuthorStyles: false
 )
-class MarkdownEditorComponent implements NgShadowRootAware {
+class MarkdownEditorComponent extends NgShadowRootAware {
   @NgTwoWay('content')
   String content;
 
